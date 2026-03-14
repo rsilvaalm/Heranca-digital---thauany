@@ -1,0 +1,55 @@
+/* ═══════════════════════════════════════
+   VARIÁVEIS — Tokens de tema
+   ═══════════════════════════════════════ */
+
+/* ── TEMA ESCURO (padrão) ── */
+:root {
+  --cyan:   #00E5FF;
+  --purple: #5B4FC0;
+
+  --bg:         #000000;
+  --bg-card:    #111111;
+  --bg-nav:     rgba(0,0,0,0.75);
+  --fg:         #FFFFFF;
+  --fg-muted:   rgba(255,255,255,0.55);
+  --fg-faint:   rgba(255,255,255,0.25);
+  --border:     rgba(255,255,255,0.08);
+  --border-mid: rgba(255,255,255,0.15);
+
+  --hero-grad1: rgba(91,79,192,0.15);
+  --hero-grad2: rgba(0,229,255,0.06);
+  --sobre-glow: rgba(91,79,192,0.12);
+  --prod-placeholder-a: #1a1a2e;
+  --prod-placeholder-b: #16213e;
+  --prod-placeholder-c: #0f3460;
+
+  --toggle-bg:    #1a1a1a;
+  --toggle-knob:  #FFFFFF;
+  --toggle-track: rgba(255,255,255,0.08);
+}
+
+/* ── TEMA CLARO — destaque em roxo ── */
+html.light {
+  --bg:         #F5F3EE;
+  --bg-card:    #FFFFFF;
+  --bg-nav:     rgba(245,243,238,0.85);
+  --fg:         #0A0A0A;
+  --fg-muted:   rgba(10,10,10,0.55);
+  --fg-faint:   rgba(10,10,10,0.3);
+  --border:     rgba(0,0,0,0.08);
+  --border-mid: rgba(0,0,0,0.15);
+
+  --hero-grad1: rgba(91,79,192,0.08);
+  --hero-grad2: rgba(91,79,192,0.04);
+  --sobre-glow: rgba(91,79,192,0.07);
+  --prod-placeholder-a: #dde8f5;
+  --prod-placeholder-b: #c8d8ee;
+  --prod-placeholder-c: #b0c6e8;
+
+  --toggle-bg:    #E8E5DF;
+  --toggle-knob:  #0A0A0A;
+  --toggle-track: rgba(0,0,0,0.08);
+
+  /* Roxo substitui ciano como cor de destaque no claro */
+  --cyan: #5B4FC0;
+}

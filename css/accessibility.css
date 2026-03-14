@@ -1,0 +1,18 @@
+/* ═══════════════════════════════════════
+   ACESSIBILIDADE — Highlight TTS
+   (Nav dropdown e progress bar estão em nav.css)
+   ═══════════════════════════════════════ */
+
+/* Highlight do texto sendo lido */
+.tts-reading {
+  background: rgba(0,229,255,0.12);
+  border-radius: 3px;
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+  transition: outline 0.2s;
+}
+
+html.light .tts-reading {
+  background: rgba(91,79,192,0.08);
+  outline-color: var(--purple);
+}

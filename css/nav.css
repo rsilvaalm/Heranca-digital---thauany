@@ -1,0 +1,274 @@
+/* ═══════════════════════════════════════
+   NAV — Navegação, toggle de tema
+         e botão de acessibilidade
+   ═══════════════════════════════════════ */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 60px;
+  background: transparent;
+  background-color: #5b4ebc;
+  color: #fff;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s ease,
+    border-color 0.4s ease,
+    padding 0.4s ease,
+    backdrop-filter 0.4s ease;
+}
+
+/* Após scroll — ganha fundo */
+nav.scrolled {
+  background: var(--bg-nav);
+  backdrop-filter: blur(14px);
+  border-bottom-color: var(--border);
+  padding: 18px 60px;
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg);
+  text-decoration: none;
+  transition: color 0.4s;
+}
+
+.nav-logo span {
+  color: var(--cyan);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: var(--fg-muted);
+  color: #fff !important;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+nav ul a:hover {
+  color: var(--cyan);
+}
+
+/* ── BOTÃO DE ACESSIBILIDADE ── */
+.nav-a11y-item {
+  position: relative;
+}
+
+.nav-a11y-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #FFF;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+
+.nav-a11y-btn:hover,
+.nav-a11y-btn.open {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+/* ── Dropdown ── */
+.a11y-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-mid);
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 180px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.a11y-dropdown.open {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.a11y-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  color: var(--fg-muted);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.a11y-opt:hover {
+  background: var(--border);
+  color: var(--fg);
+}
+
+.a11y-opt.active {
+  background: rgba(0, 229, 255, 0.08);
+  color: var(--cyan);
+}
+
+html.light .a11y-opt.active {
+  background: rgba(91, 79, 192, 0.08);
+  color: var(--purple);
+}
+
+/* ── TOGGLE DE TEMA ── */
+.theme-toggle {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.theme-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.toggle-track {
+  position: absolute;
+  inset: 0;
+  background: var(--toggle-track);
+  border: 1px solid var(--border-mid);
+  border-radius: 100px;
+  transition: background 0.4s, border-color 0.4s;
+}
+
+.toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--toggle-knob);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle input:checked~.toggle-track {
+  background: rgba(91, 79, 192, 0.15);
+  border-color: rgba(91, 79, 192, 0.4);
+}
+
+html:not(.light) .theme-toggle input:checked~.toggle-track {
+  background: rgba(0, 229, 255, 0.15);
+  border-color: rgba(0, 229, 255, 0.3);
+}
+
+.theme-toggle input:checked~.toggle-knob {
+  transform: translateX(24px);
+}
+
+.toggle-icons {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  pointer-events: none;
+}
+
+.toggle-icons svg {
+  width: 11px;
+  height: 11px;
+  transition: opacity 0.3s;
+}
+
+.icon-moon {
+  color: var(--fg-faint);
+}
+
+.icon-sun {
+  color: var(--cyan);
+  opacity: 0.5;
+}
+
+html.light .icon-moon {
+  opacity: 0.5;
+}
+
+html.light .icon-sun {
+  opacity: 1;
+}
+
+/* ── ACESSIBILIDADE — só progress bar permanece fixo ── */
+[vw-access-button] {
+  display: none !important;
+}
+
+#tts-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--cyan);
+  width: 0%;
+  z-index: 300;
+  transition: width 0.3s ease;
+  pointer-events: none;
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 900px) {
+  nav {
+    padding: 20px 24px;
+  }
+
+  nav.scrolled {
+    padding: 16px 24px;
+  }
+
+  nav ul {
+    display: none;
+  }
+}
