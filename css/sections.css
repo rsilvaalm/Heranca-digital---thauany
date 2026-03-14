@@ -492,6 +492,7 @@ html:not(.light) .testamento-box {
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid var(--border);
+  background-color: var(--purple);
   padding: 40px 60px;
   display: flex;
   justify-content: space-between;
@@ -504,17 +505,20 @@ footer {
   font-size: 0.95rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--fg-faint);
+  color: #fff;
 }
 
 .footer-logo span {
-  color: var(--cyan);
+  color: #fff;
+
 }
 
 footer p {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
-  color: var(--fg-faint);
+  color: #fff;
+  width: 100%;
+  text-align: center;
 }
 
 /* ── RESPONSIVO ── */
