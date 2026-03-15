@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/apresentacao.css">
+  <link rel="stylesheet" href="css/testamento-form.css"> <!-- NOVO -->
   <link rel="stylesheet" href="css/accessibility.css">
 </head>
 <body>
@@ -58,6 +59,7 @@
   <script src="js/accessibility.js"></script>
   <script src="js/carousel.js"></script>
   <script src="js/scroll-reveal.js"></script>
+  <script src="js/testamento-form.js"></script> <!-- NOVO -->
 
 </body>
 </html>
