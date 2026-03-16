@@ -11,12 +11,12 @@
         "imagem"   => "produto_1.png",
       ],
       [
-        "arquivo"  => "Produto_2.pdf",
+        "arquivo"  => "Produto-02-CARTILHA-ILUSTRADA-DIREITO-SUCESSORIO-HERANCA-DIGITAL-E-PROTECAO-LEGAL.pdf",
         "titulo"   => "Direito sucessório, Herança digital e Proteção legal",
         "imagem"   => "produto_2.png",
       ],
       [
-        "arquivo"  => "Produto_3.pdf",
+        "arquivo"  => "Produto-03-Modelos-de-Testamento-de-bens-digitais.pdf",
         "titulo"   => "Modelo de testamento de bens digitais",
         "imagem"   => "produto_3.png",
       ],

@@ -48,9 +48,9 @@
           <div class="tf-snum">Pergunta 01 · Modalidade</div>
           <h3>Você deseja realizar o testamento de bens digitais na modalidade particular ou cerrado?</h3>
           <div class="tf-opts">
-            <button class="tf-opt" onclick="tfPick(this,'modal','particular')"><div class="tf-radio"></div><div class="tf-otxt"><strong>Testamento Particular</strong><div class="tf-osub">Modelos 1, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17 e 18</div></div></button>
-            <button class="tf-opt" onclick="tfPick(this,'modal','cerrado')"><div class="tf-radio"></div><div class="tf-otxt"><strong>Testamento Cerrado</strong><div class="tf-osub">Modelos 2, 3.2, 4.2, 5.2, 6.2, 7.2, 9, 10.2, 11.2, 12.2, 13.2, 14.2, 15.2 e 16.2</div></div></button>
-            <button class="tf-opt" onclick="tfPick(this,'modal','ambos')"><div class="tf-radio"></div><div class="tf-otxt"><strong>Não sei / Quero sugestão</strong><div class="tf-osub">O formulário indicará todas as opções disponíveis</div></div></button>
+            <button class="tf-opt" onclick="tfPick(this,'modal','particular')"><div class="tf-radio"></div><div class="tf-otxt"><strong>Testamento Particular</strong></div></button>
+            <button class="tf-opt" onclick="tfPick(this,'modal','cerrado')"><div class="tf-radio"></div><div class="tf-otxt"><strong>Testamento Cerrado</strong></div></button>
+            
           </div>
           <p class="tf-err" id="tf-e1">Selecione uma opção para continuar.</p>
         </div>
