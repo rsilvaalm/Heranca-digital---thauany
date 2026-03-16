@@ -36,8 +36,8 @@ $dados = [
 
 // Respostas do questionário
 $respostas = json_decode($_POST['respostas'] ?? '{}', true) ?? [];
-$modalidade = in_array($respostas['modalidade'] ?? '', ['particular','cerrado'])
-    ? $respostas['modalidade']
+$modalidade = in_array($respostas['modal'] ?? '', ['particular','cerrado'])
+    ? $respostas['modal']
     : 'particular';
 
 // Campos obrigatórios
@@ -71,41 +71,43 @@ if ($dados['data_nascimento']) {
 
 $hoje = date('d') . ' de ' . nome_mes((int)date('m')) . ' de ' . date('Y');
 
-$substituicoes = [
-    '[NOME COMPLETO DO TESTADOR]' => mb_strtoupper($dados['nome']),
-    //'[NOME COMPLETO]'             => mb_strtoupper($dados['nome']),
-    //'[nome]'                      => $dados['nome'],
-    '[nacionalidade]'             => $dados['nacionalidade'],
-    '[NACIONALIDADE]'             => $dados['nacionalidade'],
-    '[estado civil]'              => $dados['estado_civil'],
-    '[ESTADO CIVIL]'              => $dados['estado_civil'],
-    '[estado civil]'              => $dados['estado_civil'],
-    '[profissão]'                 => $dados['profissao'],
-    '[PROFISSÃO]'                 => $dados['profissao'],
-    '[CPF]'                       => $dados['cpf'],
-    '[RG]'                        => $dados['rg'],
-    '[endereço completo]'         => $dados['endereco'],
-    '[ENDEREÇO COMPLETO]'         => $dados['endereco'],
-    'portador(a) do CPF nº [CPF] e do RG nº [RG]'
-        => 'portador(a) do CPF nº ' . $dados['cpf'] . ' e do RG nº ' . $dados['rg'],
-    '[Local], [dia] de [mês] de [ano].'
-        => '_______________________, ' . $hoje . '.',
-    'Data de nascimento:__________________'
-        => 'Data de nascimento: ' . $data_nasc,
-    '[MODELO - TEXTO]'            => $nome_modelo,
-];
+// ── Substituições — apenas a frase de identificação do TESTADOR ──
+//
+// Estratégia: substituímos a frase "Eu, [NOME COMPLETO DO TESTADOR], ..."
+// inteira de uma vez com regex, sem tocar em nenhum outro placeholder do
+// documento ([endereço completo] dos herdeiros, [CPF] do testamenteiro etc.)
+//
+$frase_testador = '/Eu,\s*\[NOME COMPLETO DO TESTADOR\],'
+    . '\s*\[nacionalidade\],'
+    . '\s*\[estado civil\],'
+    . '\s*\[profissão\],'
+    . '\s*portador\(a\) do CPF n[°oº]\s*\[CPF\] e do RG n[°oº]\s*\[RG\],'
+    . '\s*residente e domiciliado\(a\) na \[endereço completo\]/u';
 
-foreach ($substituicoes as $placeholder => $valor) {
-    $texto = str_replace($placeholder, $valor, $texto);
-}
+$substituicao_testador = 'Eu, ' . mb_strtoupper($dados['nome']) . ', '
+    . $dados['nacionalidade'] . ', '
+    . $dados['estado_civil'] . ', '
+    . $dados['profissao'] . ', '
+    . 'portador(a) do CPF nº ' . $dados['cpf'] . ' e do RG nº ' . $dados['rg'] . ', '
+    . 'residente e domiciliado(a) na ' . $dados['endereco'];
 
-// Substituição genérica de padrões remanescentes com regex
-$texto = preg_replace('/\[CPF\]/', $dados['cpf'], $texto);
-$texto = preg_replace('/\[RG\]/', $dados['rg'], $texto);
-$texto = preg_replace('/\[endereço completo\]/i', $dados['endereco'], $texto);
-$texto = preg_replace('/\[estado civil\]/i', $dados['estado_civil'], $texto);
-$texto = preg_replace('/\[profissão\]/i', $dados['profissao'], $texto);
-$texto = preg_replace('/\[nacionalidade\]/i', $dados['nacionalidade'], $texto);
+$texto = preg_replace($frase_testador, $substituicao_testador, $texto);
+
+// Substitui apenas [NOME COMPLETO DO TESTADOR] onde aparecer isolado (assinatura)
+$texto = str_replace('[NOME COMPLETO DO TESTADOR]', mb_strtoupper($dados['nome']), $texto);
+
+// Data e local
+$texto = str_replace(
+    '[Local], [dia] de [mês] de [ano].',
+    '_______________________, ' . $hoje . '.',
+    $texto
+);
+$texto = str_replace(
+    'Data de nascimento:__________________',
+    'Data de nascimento: ' . $data_nasc,
+    $texto
+);
+$texto = str_replace('[MODELO - TEXTO]', $nome_modelo, $texto);
 
 // ── Registrar no banco ────────────────────────────────────────────
 try {
@@ -138,7 +140,6 @@ try {
         ':ip'              => $_SERVER['REMOTE_ADDR'] ?? null,
     ]);
 } catch (Exception $e) {
-    // Não interrompe o download por erro de BD
     error_log('Erro ao gravar testamento: ' . $e->getMessage());
 }
 
@@ -154,7 +155,7 @@ class TestamentoPDF extends FPDF {
     public function Header(): void {
         $this->SetFont('Arial', 'B', 9);
         $this->SetTextColor(91, 79, 192);
-        $this->Cell(0, 8, mb_convert_encoding('HERANÇA DIGITAL | ' . mb_strtoupper($this->titulo_doc), 'ISO-8859-1', 'UTF-8'), 0, 1, 'C');
+        $this->Cell(0, 8, conv('HERANÇA DIGITAL | ' . mb_strtoupper($this->titulo_doc)), 0, 1, 'C');
         $this->SetTextColor(0, 0, 0);
         $this->SetDrawColor(91, 79, 192);
         $this->SetLineWidth(0.4);
@@ -166,7 +167,7 @@ class TestamentoPDF extends FPDF {
         $this->SetY(-12);
         $this->SetFont('Arial', 'I', 8);
         $this->SetTextColor(150, 150, 150);
-        $this->Cell(0, 5, mb_convert_encoding('Modelo orientativo | não substitui análise jurídica especializada · Página ' . $this->PageNo(), 'ISO-8859-1', 'UTF-8'), 0, 0, 'C');
+        $this->Cell(0, 5, conv('Modelo orientativo | não substitui análise jurídica especializada · Página ' . $this->PageNo()), 0, 0, 'C');
     }
 }
 
@@ -174,7 +175,6 @@ $pdf = new TestamentoPDF($nome_modelo);
 $pdf->SetMargins(20, 20, 20);
 $pdf->SetAutoPageBreak(true, 18);
 $pdf->AddPage();
-
 
 // Corpo do testamento
 $pdf->SetFont('Arial', '', 11);
@@ -194,25 +194,24 @@ foreach ($linhas as $linha) {
     $prev_blank = false;
 
     // Detectar títulos de seção (ex: "1. DAS DISPOSIÇÕES GERAIS")
-    $e_titulo_secao = preg_match('/^\d+[\.\s]+[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ\s]{6,}$/', $linha)
-                   || preg_match('/^TESTAMENTO\s/i', $linha)
-                   || (mb_strtoupper($linha) === $linha && mb_strlen($linha) > 8 && mb_strlen($linha) < 120);
+    $e_titulo_secao = preg_match('/^\d+[\.\s]+[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ\s]{6,}$/u', $linha)
+                   || preg_match('/^TESTAMENTO\s/iu', $linha)
+                   || (mb_strtoupper($linha, 'UTF-8') === $linha && mb_strlen($linha) > 8 && mb_strlen($linha) < 120);
 
-    $linha_iso = mb_convert_encoding($linha, 'ISO-8859-1', 'UTF-8');
+    $linha_pdf = conv($linha);
 
     if ($e_titulo_secao) {
-        // Se estiver perto do fim da página, força quebra antes do título
         if ($pdf->GetY() > 240) {
             $pdf->AddPage();
         } else {
             $pdf->Ln(4);
         }
         $pdf->SetFont('Arial', 'B', 11);
-        $pdf->MultiCell(0, 6, $linha_iso, 0, 'C');
+        $pdf->MultiCell(0, 6, $linha_pdf, 0, 'C');
         $pdf->SetFont('Arial', '', 11);
         $pdf->Ln(2);
     } else {
-        $pdf->MultiCell(0, 6, $linha_iso, 0, 'J');
+        $pdf->MultiCell(0, 6, $linha_pdf, 0, 'J');
     }
 }
 
@@ -226,7 +225,44 @@ header('Cache-Control: no-cache, no-store');
 $pdf->Output('D', $nome_arquivo);
 exit;
 
-// ── Helper ────────────────────────────────────────────────────────
+// ════════════════════════════════════════
+// FUNÇÕES AUXILIARES
+// ════════════════════════════════════════
+
+/**
+ * Converte UTF-8 → ISO-8859-1 com mapeamento manual dos caracteres
+ * que o iconv/mb_convert_encoding costumam perder (–, —, ", ", ', ' etc.)
+ */
+function conv(string $str): string {
+    // Mapeamento de caracteres Unicode problemáticos → equivalentes ISO
+    $mapa = [
+        "\u{2013}" => '-',   // en dash –
+        "\u{2014}" => '-',   // em dash —
+        "\u{201C}" => '"',   // aspas "
+        "\u{201D}" => '"',   // aspas "
+        "\u{2018}" => "'",   // aspas '
+        "\u{2019}" => "'",   // aspas '
+        "\u{2026}" => '...',  // reticências …
+        "\u{00B0}" => 'o',   // grau °  (em "nº" vira "no")
+        "\u{00BA}" => 'o',   // ordinal masculino º
+        "\u{00AA}" => 'a',   // ordinal feminino ª
+        "\u{00AD}" => '-',   // hífen suave
+        "\u{2012}" => '-',   // figure dash
+        "\u{2015}" => '-',   // horizontal bar
+        "\u{00A0}" => ' ',   // non-breaking space
+        "\u{2022}" => '-',   // bullet •
+        "\u{00AB}" => '"',   // «
+        "\u{00BB}" => '"',   // »
+    ];
+
+    $str = str_replace(array_keys($mapa), array_values($mapa), $str);
+
+    // Converte o restante
+    return mb_convert_encoding($str, 'ISO-8859-1', 'UTF-8');
+}
+
+
+
 function nome_mes(int $m): string {
     $meses = ['','janeiro','fevereiro','março','abril','maio','junho',
               'julho','agosto','setembro','outubro','novembro','dezembro'];
