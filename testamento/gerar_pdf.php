@@ -184,7 +184,7 @@ $linhas = explode("\n", $texto);
 $prev_blank = false;
 
 foreach ($linhas as $linha) {
-    $linha = trim($linha);
+    $linha = trim($linha); // o trim já remove os espaços extras do início
 
     if ($linha === '') {
         if (!$prev_blank) $pdf->Ln(3);
@@ -193,10 +193,18 @@ foreach ($linhas as $linha) {
     }
     $prev_blank = false;
 
-    // Detectar títulos de seção (ex: "1. DAS DISPOSIÇÕES GERAIS")
     $e_titulo_secao = preg_match('/^\d+[\.\s]+[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ\s]{6,}$/u', $linha)
                    || preg_match('/^TESTAMENTO\s/iu', $linha)
                    || (mb_strtoupper($linha, 'UTF-8') === $linha && mb_strlen($linha) > 8 && mb_strlen($linha) < 120);
+
+    // Linha de traços de assinatura  ____________
+    $e_linha_assinatura = preg_match('/^_{4,}$/', $linha);
+
+    // Linha de nome abaixo da assinatura — [NOME COMPLETO], [Assinatura do ...]
+    $e_nome_assinatura = preg_match('/^\[.*\]$/', $linha) && !$e_titulo_secao;
+
+    // Rótulo de grupo: TESTEMUNHAS:, AUTO DE APROVAÇÃO etc.
+    $e_rotulo = preg_match('/^(TESTEMUNHAS|AUTO DE APROVAÇÃO)/iu', $linha);
 
     $linha_pdf = conv($linha);
 
@@ -210,7 +218,26 @@ foreach ($linhas as $linha) {
         $pdf->MultiCell(0, 6, $linha_pdf, 0, 'C');
         $pdf->SetFont('Arial', '', 11);
         $pdf->Ln(2);
+
+    } elseif ($e_linha_assinatura) {
+        $pdf->Ln(2);
+        $pdf->SetFont('Arial', '', 11);
+        $pdf->MultiCell(0, 6, $linha_pdf, 0, 'C');
+
+    } elseif ($e_nome_assinatura) {
+        $pdf->SetFont('Arial', '', 11);
+        $pdf->MultiCell(0, 6, $linha_pdf, 0, 'C');
+        $pdf->Ln(2);
+
+    } elseif ($e_rotulo) {
+        $pdf->Ln(3);
+        $pdf->SetFont('Arial', 'B', 11);
+        $pdf->MultiCell(0, 6, $linha_pdf, 0, 'L');
+        $pdf->SetFont('Arial', '', 11);
+        $pdf->Ln(1);
+
     } else {
+        $pdf->SetFont('Arial', '', 11);
         $pdf->MultiCell(0, 6, $linha_pdf, 0, 'J');
     }
 }

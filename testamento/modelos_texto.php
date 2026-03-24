@@ -69,7 +69,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_03' => 'TESTAMENTO PARA DESAPARECIMENTO VIRTUAL / MORTE DIGITAL
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], [profissão], portador(a) do CPF nº [CPF] e do RG nº [RG], residente e domiciliado(a) na [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, e por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito aos meus bens digitais.
@@ -134,7 +134,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_04' => 'TESTAMENTO DIGITAL PARA BENS COM VALOR ECONÔMICO
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], [profissão], portador(a) do CPF nº [CPF] e do RG nº [RG], residente e domiciliado(a) na [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, e por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito aos meus bens digitais.
@@ -218,7 +218,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_05' => 'TESTAMENTO PARA TRANSMISSÃO DE ACERVO DIGITAL COM E SEM VALOR ECONOMICO
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], [profissão], portador(a) do CPF nº [CPF] e do RG nº [RG], residente e domiciliado(a) na [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, e por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.857, 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito ao meu acervo digital completo, abrangendo tanto bens com valor econômico quanto sem valor econômico, fixados em ambiente virtual.
@@ -310,7 +310,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_06' => 'TESTAMENTO PARA TRANSMISSÃO DE ACERVO DIGITAL A PESSOA ESPECÍFICA
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], [profissão], portador(a) do CPF nº [CPF] e do RG nº [RG], residente e domiciliado(a) na [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, e por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.857, 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito ao meu acervo digital completo, abrangendo tanto bens com valor econômico quanto sem valor econômico, fixados em ambiente virtual.
@@ -380,7 +380,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_07' => 'TESTAMENTO DIGITAL PARA CONTAS CONJUNTAS OU COMPARTILHADAS
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], [profissão], portador(a) do CPF nº [CPF] e do RG nº [RG], residente e domiciliado(a) na [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, e por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.857, 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito às minhas contas digitais conjuntas ou compartilhadas, dotadas de valor econômico.
@@ -472,7 +472,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_08' => 'TESTAMENTO DIGITAL PARA BENS PROTEGIDOS PELO DIREITO AUTORAL
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], [profissão], portador(a) do CPF nº [CPF] e do RG nº [RG], residente e domiciliado(a) na [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, e por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.857, 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito aos meus bens digitais protegidos pelos direitos autorais.
@@ -634,7 +634,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_11' => 'TESTAMENTO PARA FOTOGRAFIAS DIGITAIS PROTEGIDAS PELOS DIREITOS AUTORAIS
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], fotógrafo(a), portador(a) do CPF nº [CPF] e do RG nº [RG], residente e domiciliado(a) na [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, e por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.857, 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito às minhas fotografias digitais protegidas pelos direitos autorais independente de registro.
@@ -718,7 +718,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_12' => 'TESTAMENTO PARA TEXTOS LITERÁRIOS, ARTÍSTICOS OU CIENTÍFICOS, COLETÂNEAS OU COMPILAÇÕES, ANTOLOGIAS, ENCICLOPÉDIAS, DICIONÁRIOS, COREOGRAFIAS DIGITAIS E SEMELHANTES PROTEGIDOS PELA LEI DE DIREITOS AUTORAIS
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], escritor(a)/autor(a)/pesquisador(a), portador(a) do CPF nº [CPF] e do RG nº [RG], residente e domiciliado(a) na [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, e por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.857, 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito às minhas obras literárias, artísticas ou científicas em formato digital, protegidas pelos direitos autorais, independentemente de registro formal.
@@ -806,7 +806,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_13' => 'TESTAMENTO PARA VÍDEOS ARMAZENADOS NO AMBIENTE VIRTUAL PROTEGIDOS PELOS DIREITOS AUTORAIS
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], [profissão], titular de CPF nº [CPF] e portador(a) do RG nº [RG], residente e domiciliado(a) à [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, e por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.857, 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito ao meu acervo de vídeos no ambiente digitais e demais obras audiovisuais protegidas pelos direitos autorais, independente de registro formal.
@@ -892,7 +892,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_14' => 'TESTAMENTO PARA PROGRAMAS DE COMPUTADOR (CÓDIGO-FONTE)
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], [profissão], portador(a) do CPF nº [CPF] e do RG nº [RG], residente e domiciliado(a) na [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, e por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.857, 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito aos meus programas de computador (códigos-fonte) armazenados em meio digital.
@@ -980,7 +980,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_15' => 'TESTAMENTO PARA MÚSICAS E COMPOSIÇÕES DIGITAIS PROTEGIDAS PELOS DIREITOS AUTORAIS
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], músico(a)/compositor(a), portador(a) do CPF nº [CPF] e do RG nº [RG], residente e domiciliado(a) na [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, e por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.857, 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito às minhas músicas, composições e obras sonoras armazenadas em formato digital, protegidas pelos direitos autorais.
@@ -1066,7 +1066,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_16' => 'TESTAMENTO DIGITAL PARA TRANSMISSÃO DE PESQUISA CIENTÍFICA REALIZADA NO MEIO DIGITAL E/OU DE ACERVO DE ESTUDO
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], [profissão/pesquisador(a)], portador(a) do CPF nº [CPF] e do RG nº [RG], residente e domiciliado(a) na [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, e por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.857, 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito ao meu acervo de pesquisas, produções e estudos científicos armazenados, exclusivamente, em formato digital.
@@ -1154,7 +1154,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_17' => 'TESTAMENTO DIGITAL PARA NOMEAÇÃO DE INVENTARIANTE DIGITAL
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], [profissão], portador(a) do CPF nº [CPF] e do RG nº [RG], residente e domiciliado(a) na [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, e por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.857, 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito ao meu acervo digital, com ou sem valor econômico, armazenado em dispositivos eletrônicos ou plataformas virtuais.
@@ -1228,7 +1228,7 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
     'modelo_18' => 'TESTAMENTO PARA TRANSFORMAÇÃO DE REDES DIGITAIS EM MEMORIAIS
 Eu, [NOME COMPLETO DO TESTADOR], [nacionalidade], [estado civil], [profissão], portador(a) do CPF nº [CPF] e do RG nº [RG], residente e domiciliado(a) na [endereço completo], estando em pleno gozo de minhas faculdades mentais, lúcido(a) e consciente, por minha livre e espontânea vontade, sem qualquer induzimento ou caução, resolvo, por meio deste TESTAMENTO/INSTRUMENTO PARTICULAR, lavrado de acordo com os ditames legais, especialmente os artigos 1.857, 1.876 e seguintes do Código Civil Brasileiro, declarar minhas disposições de última vontade, especificamente no que diz respeito à preservação da minha vida digital após o meu falecimento.
@@ -1298,6 +1298,6 @@ _____________________________________
 ____________________________________
 [Assinatura da testemunha 1]
 ___________________________________
-[Assinatura da testemunha 2] ”.',
+[Assinatura da testemunha 2]',
 
 ];

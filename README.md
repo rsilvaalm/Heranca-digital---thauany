@@ -230,7 +230,7 @@ Cada tipo possui versão **particular** e **cerrado**, totalizando 36 modelos:
 
 ## Autora
 
-Desenvolvido para **THAUANY FREIRE DOS SANTOS SILVA** — advogada, pesquisadora e mestranda no PROFNIT/UNIVASF, com pesquisa dedicada à Herança Digital no Brasil desde 2019.
+     **THAUANY FREIRE DOS SANTOS SILVA** — advogada, pesquisadora e mestranda no PROFNIT/UNIVASF, com pesquisa dedicada à Herança Digital no Brasil desde 2019.
 
 ---
 
